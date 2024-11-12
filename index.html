@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certidões e Tribunais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#075cac]" style="padding-bottom: 350px;">
+
+    <header>
+        <nav class="bg-[#075cac] border-gray-200">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <!-- Logo, peguei com o Lil vinicin -->
+                <div class="flex-shrink-0">
+                    <img src="https://bitrix24public.com/consorciounifisa.bitrix24.com.br/docs/pub/455bd2eccf185a810950b96a39cf9566/showFile/?&token=1zsjflw7xl50" class="w-24 md:w-32" alt="Unifisa Logo" />
+                </div>
+                <!-- Texto Centralizado -->
+                <div class="flex-grow text-center md:block hidden">
+                    <p class="text-xl md:text-3xl font-bold text-white">Certidões e Tribunais</p>
+                </div>
+                <!-- Botão de Menu -->
+                <div class="md:hidden flex items-center">
+                    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Texto para telas menores (responsivo) -->
+                <div class="text-center w-full md:hidden mt-4">
+                    <p class="text-xl font-bold text-white">Certidões e Tribunais</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+  
+    <div class="container mx-auto">
+        <!-- Botão de Ajuda, só coloquei porque pediram -->
+        <button id="help-button" class="help-button">?</button>
+
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="cards-container">
+            <!-- ò os cards fi-->
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Sao Paulo</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://esaj.tjsp.jus.br/sco/abrirCadastro.do" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://esaj.tjsp.jus.br/sco/abrirCadastro.do" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://trt15.jus.br/servicos/certidoes/certidao-eletronica-de-acoes-trabalhistas-ceat" target="_blank">TRT 15 (tribunal regional do trabalho)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://web.trf3.jus.br/certidao-regional/CertidaoCivelEleitoralCriminal/SolicitarDadosCertidao" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>            
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Rio de Janeiro</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>            
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Minas Gerais</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://rupe.tjmg.jus.br/rupe/justica/publico/certidoes/criarSolicitacaoCertidao.rupe?solicitacaoPublica=true" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://certidao.trt3.jus.br/certidao/feitosTrabalhistas/aba1.emissao.htm;jsessionid=PM5E15tO-bFk+QKgW7Cc-cY+" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sistemas.trf1.jus.br/certidao/#/solicitacao" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>            
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                    <h2 class="text-lg font-semibold mb-2">Paraná</h2>
+                    <div class="dropdown-content">
+                        <div class="flex items-center justify-between">
+                            <a href="http://www.cdw.fazenda.pr.gov.br/cdw/emissao/certidaoAutomatica/" target="_blank">CDT</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                            <div class="flex items-center justify-between">
+                            <a href="https://pje.trt9.jus.br/certidoes/inicio" target="_blank">TRT (tribunal regional do trabalho)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                            <div class="flex items-center justify-between">
+                            <a href="https://www2.trf4.jus.br/trf4/processos/certidao/index.php?&seq=135%7C230%7C167" target="_blank">TRF (tribunal regional federal)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                            <div class="flex items-center justify-between">
+                            <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                            <div class="flex items-center justify-between">
+                            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                            <div class="flex items-center justify-between">
+                            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                            <div class="flex items-center justify-between">
+                            <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                            <div class="flex items-center justify-between">
+                            <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        </div>
+                </div>            
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                    <h2 class="text-lg font-semibold mb-2">Santa Catarina</h2>
+                    <div class="dropdown-content">
+                        <div class="flex items-center justify-between">
+                            <a href="https://certidoes.tjsc.jus.br/" target="_blank">TJ (tribunal da justiça)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                            <div class="flex items-center justify-between">
+                            <a href="https://pje.trt12.jus.br/certidoes/inicio" target="_blank">TRT (tribunal regional do trabalho)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://www2.trf4.jus.br/trf4/processos/certidao/index.php?&seq=135%7C230%7C167" target="_blank">TRF (tribunal regional federal)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    </div>
+                </div>       
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                    <h2 class="text-lg font-semibold mb-2">Rio grande do Sul</h2>
+                    <div class="dropdown-content">
+                        <div class="flex items-center justify-between">
+                            <a href="https://www.tjrs.jus.br/novo/processos-e-servicos/servicos-processuais/emissao-de-antecedentes-e-certidoes/" target="_blank">TJ (tribunal da justiça)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                            <div class="flex items-center justify-between">
+                            <a href="https://pje.trt4.jus.br/certidoes/inicio" target="_blank">TRT (tribunal regional do trabalho)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://www2.trf4.jus.br/trf4/processos/certidao/index.php?&seq=135%7C230%7C167" target="_blank">TRF (tribunal regional federal)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('tutorial de utilização em breve')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    </div>
+                </div>       
+                <!--paramos aqui irmão, depois voce continua-->                
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                    <h2 class="text-lg font-semibold mb-2">Espirito Santo</h2>
+                    <div class="dropdown-content">
+                        <div class="flex items-center justify-between">
+                            <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                            <div class="flex items-center justify-between">
+                            <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    </div>
+                </div>       
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                    <h2 class="text-lg font-semibold mb-2">Goias</h2>
+                    <div class="dropdown-content">
+                        <div class="flex items-center justify-between">
+                            <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                            <div class="flex items-center justify-between">
+                            <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                            <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    </div>
+                </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Mato Grosso</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Mato Grosso do Sul</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">DIstrito Federal</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Tocantins</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Maranhão</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Piaui</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Ceará</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Rio Grande do Norte</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Paraiba</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Pernanbuco</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Alagoas</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Sergipe</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Rondonia</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Acre</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Amazonas</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Roraima</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Pará</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Amapá</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow relative card" data-state="Rio de Janeiro">
+                <h2 class="text-lg font-semibold mb-2">Bahia</h2>
+                <div class="dropdown-content">
+                    <div class="flex items-center justify-between">
+                        <a href="https://www4.tjrj.jus.br/Portal-Extrajudicial/certidao/judicial/selecionarComarcas" target="_blank">TJ (tribunal da justiça)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                        <div class="flex items-center justify-between">
+                        <a href="https://pje.trt1.jus.br/certidoes/trabalhista/emissao" target="_blank">TRT (tribunal regional do trabalho)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://certidoes.trf2.jus.br/certidoes/#/principal/solicitar" target="_blank">TRF (tribunal regional federal)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT (certidão negativa de debitos trabalhistas)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/emitir/" target="_blank">RECEITA CNPJ (pessoa juridica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://solucoes.receita.fazenda.gov.br/Servicos/certidaointernet/PF/Emitir" target="_blank">RECEITA CPF (pessoa fisica)</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://sitenet.serasa.com.br/Logon/index.jsp" target="_blank">SERASA</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://www.pesquisaprotesto.com.br/" target="_blank">PROTESTO</a>
+                        <button class="text-white px-2 py-1 text-sm rounded ml-2" onclick="openModal('Aqui está a explicação sobre TJ!')"><i class="fa-solid fa-magnifying-glass"></i></button>                    </div>
+                </div>
+            </div>       
+        </div>
+    </div>
+
+    <!-- Modal -->
+<div id="explanation-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p id="modal-text"></p>
+    </div>
+</div>
+
+    <!-- Modal de Boas-Vindas -->
+    <div id="welcome-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="text-xl font-bold mb-4">Bem-vindo ao site!</h2>
+            <p>Aqui você pode buscar informações sobre certidões e tribunais de diferentes estados. Utilize a barra de
+                pesquisa para encontrar o estado desejado e clique nos cartões para acessar os links dos tribunais.</p>
+        </div>
+    </div>
+    
+    <!-- Modal de Ajuda -->
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="text-xl font-bold mb-4">Ajuda</h2>
+            <p>Este é o site para consulta de certidões e tribunais. Aqui estão algumas dicas:</p>
+            <ul class="text-left mt-4">
+                <li>Use a barra de pesquisa para encontrar um estado específico.</li>
+                <li>Clique nos cartões para acessar os links dos tribunais.</li>
+                <li>Se precisar de mais assistência, entre em contato conosco pelo nosso suporte.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+        
+    </script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
