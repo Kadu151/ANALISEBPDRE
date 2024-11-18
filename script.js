@@ -1,147 +1,62 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Modal de Boas-Vindas
-    const welcomeModal = document.getElementById('welcome-modal');
-    const closeWelcomeBtn = welcomeModal.querySelector('.close');
+document.addEventListener("DOMContentLoaded", () => {
+    const searchBar = document.getElementById("search-bar");
+    const cards = document.querySelectorAll(".grid > div");
 
-    // Mostrar o modal de boas-vindas após o carregamento da página
-    window.onload = function () {
-        welcomeModal.classList.add('show');
-    };
+    // Criação do modal
+    const modal = document.createElement("div");
+    modal.id = "help-modal";
+    modal.classList.add(
+        "fixed", "inset-0", "bg-gray-800", "bg-opacity-75", 
+        "flex", "items-center", "justify-center", "hidden"
+    );
 
-    // Fechar o modal de boas-vindas
-    closeWelcomeBtn.onclick = function () {
-        welcomeModal.classList.remove('show');
-    };
+    modal.innerHTML = `
+        <div class="bg-white rounded-lg shadow-lg w-11/12 max-w-lg p-6 relative">
+            <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold mb-4">Ajuda</h2>
+            <p class="text-gray-700">Este é o modal de ajuda. Aqui você pode encontrar informações sobre como utilizar os links e funcionalidades desta seção.</p>
+            <ul class="mt-4 space-y-2 text-gray-700">
+                <li><strong>1.</strong> Clique no nome do tribunal ou certidão para abrir a página diretamente.</li>
+                <li><strong>2.</strong> Use a barra de pesquisa para localizar rapidamente o tribunal ou certidão desejada.</li>
+                <li><strong>3.</strong> Caso precise de suporte adicional, entre em contato com a equipe responsável.</li>
+            </ul>
+        </div>
+    `;
 
-    // Fechar o modal de boas-vindas se clicar fora da caixa de conteúdo
-    window.onclick = function (event) {
-        if (event.target === welcomeModal) {
-            welcomeModal.classList.remove('show');
-        }
-    };
+    document.body.appendChild(modal);
 
-    // Modal de Ajuda
-    const helpModal = document.getElementById('help-modal');
-    const helpButton = document.getElementById('help-button');
-    const closeHelpBtn = helpModal.querySelector('.close');
-
-    // Mostrar o modal de ajuda
-    helpButton.onclick = function () {
-        helpModal.classList.add('show');
-    };
-
-    // Fechar o modal de ajuda
-    closeHelpBtn.onclick = function () {
-        helpModal.classList.remove('show');
-    };
-
-    // Fechar o modal de ajuda se clicar fora da caixa de conteúdo
-    window.onclick = function (event) {
-        if (event.target === helpModal) {
-            helpModal.classList.remove('show');
-        }
-    };
-
-    // Seleciona todos os cards com dropdown-content
-    const cards = document.querySelectorAll('.card');
-
-    // Adiciona o evento de click em cada card para abrir/fechar o dropdown
-    cards.forEach(card => {
-        card.addEventListener('click', function (event) {
-            // Impede o clique no card de se propagar para o documento
-            event.stopPropagation();
-
-            const dropdownContent = this.querySelector('.dropdown-content');
-            const isVisible = dropdownContent.style.display === 'block';
-
-            // Fecha todos os dropdowns abertos
-            document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-                dropdown.style.display = 'none';
-            });
-
-            // Abre o dropdown do card clicado, se não estiver visível
-            if (!isVisible) {
-                dropdownContent.style.display = 'block';
-                setTimeout(() => {
-                    dropdownContent.style.opacity = '1'; // Transição suave de opacidade
-                    dropdownContent.style.transform = 'translateY(0)'; // Transição suave de posição
-                }, 10); // Pequeno atraso para permitir a animação
-            }
-        });
-    });
-
-    // Fecha o dropdown se clicar fora do card
-    document.addEventListener('click', function () {
-        document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-            dropdown.style.opacity = '0'; // Transição suave de opacidade
-            dropdown.style.transform = 'translateY(-10px)'; // Transição suave de posição
-            setTimeout(() => {
-                dropdown.style.display = 'none'; // Oculta o dropdown
-            }, 300); // Tempo correspondente à duração da animação
-        });
-    });
-
-    // Pesquisa
-    const searchInput = document.getElementById('search');
-    const cardsContainer = document.getElementById('cards-container');
-
-    searchInput.addEventListener('input', function () {
-        const searchTerm = this.value.toLowerCase();
+    // Função para filtrar os cards com base no texto da barra de pesquisa
+    searchBar.addEventListener("input", () => {
+        const query = searchBar.value.toLowerCase().trim();
 
         cards.forEach(card => {
-            const state = card.getAttribute('data-state').toLowerCase();
+            const cardTitle = card.querySelector("h2").textContent.toLowerCase();
+            const links = Array.from(card.querySelectorAll("a"))
+                .map(link => link.textContent.toLowerCase());
 
-            if (state.includes(searchTerm)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+            const matches = cardTitle.includes(query) || links.some(link => link.includes(query));
+
+            card.style.display = matches ? "" : "none";
         });
-        function openModal(text) {
-            document.getElementById('modal-text').innerText = text;
-            document.getElementById('explanation-modal').style.display = 'block';
-        }
+    });
 
-        function closeModal() {
-            document.getElementById('explanation-modal').style.display = 'none';
-        }
+    // Adiciona funcionalidade ao botão de lupa para exibir o modal
+    const buttons = document.querySelectorAll(".fa-magnifying-glass");
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            modal.classList.remove("hidden");
+        });
+    });
 
-        // Fechar o modal se clicar fora da caixa de conteúdo
-        window.onclick = function(event) {
-            const modal = document.getElementById('explanation-modal');
-            if (event.target === modal) {
-                closeModal();
-            }
+    // Fechar o modal
+    document.getElementById("close-modal").addEventListener("click", () => {
+        modal.classList.add("hidden");
+    });
+
+    // Fechar o modal clicando fora dele
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.classList.add("hidden");
         }
     });
 });
-// Função para abrir o modal
-function openModal(text) {
-    const modal = document.getElementById('explanation-modal');
-    const modalText = document.getElementById('modal-text');
-    modalText.innerText = text; // Define o texto do modal
-    modal.classList.add('show'); // Adiciona a classe 'show' para exibir o modal
-    setTimeout(() => {
-        const modalContent = modal.querySelector('.modal-content');
-        modalContent.style.opacity = '1'; // Torna o conteúdo visível após a animação
-    }, 10); // Atraso para garantir que a animação funcione
-}
-
-// Função para fechar o modal
-function closeModal() {
-    const modal = document.getElementById('explanation-modal');
-    const modalContent = modal.querySelector('.modal-content');
-    modalContent.style.opacity = '0'; // Animação de saída
-    setTimeout(() => {
-        modal.classList.remove('show'); // Remove a classe 'show' após a animação
-    }, 500); // Aguarda a duração da animação antes de esconder
-}
-
-// Fechar o modal se clicar fora da caixa de conteúdo
-window.onclick = function(event) {
-    const modal = document.getElementById('explanation-modal');
-    if (event.target === modal) {
-        closeModal();
-    }
-}
-
