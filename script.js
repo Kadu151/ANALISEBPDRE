@@ -4,18 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Criação do modal
     const modal = document.createElement("div");
-    modal.id = "help-modal";
-    modal.classList.add(
-        "fixed", "inset-0", "bg-gray-800", "bg-opacity-75", 
-        "flex", "items-center", "justify-center", "hidden"
-    );
+    modal.classList.add("modal");
 
     modal.innerHTML = `
-        <div class="bg-white rounded-lg shadow-lg w-11/12 max-w-lg p-6 relative">
-            <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
-            <h2 class="text-2xl font-bold mb-4">Ajuda</h2>
-            <p class="text-gray-700">Este é o modal de ajuda. Aqui você pode encontrar informações sobre como utilizar os links e funcionalidades desta seção.</p>
-            <ul class="mt-4 space-y-2 text-gray-700 overflow-y-auto max-h-96 pr-2">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ajuda</h2>
+            <p id="modal-text">Este é o modal de ajuda. Aqui você pode encontrar informações sobre como utilizar os links e funcionalidades desta seção.</p>
+            <ul>
                 <li><strong>-</strong> TRT-2.</li>
                 <li><strong>1.</strong> SÃO PAULO</li>
                 <li><strong>2.</strong> ARUJA</li>
@@ -55,14 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li><strong>36.</strong> SÃO LOURENÇO DA SERRA</li>
                 <li><strong>37.</strong> SÃO VICENTE</li>
                 <li><strong>38.</strong> VARGEM GRANDE PAULISTA</li>
-                <li><strong>39.</strong> Cidades não listadas acima se referem ao TRT-15 (informações exclusivas ao Estado de São Paulo).</li>
+                <li><strong>39.</strong> Cidades não listadas acima se referem ao TRT-15 (informações exclusivas ao Estado de SP).</li>
             </ul>
         </div>
     `;
 
     document.body.appendChild(modal);
 
-    // Função para filtrar os cards com base no texto da barra de pesquisa
+    // Função de filtro de cards
     searchBar.addEventListener("input", () => {
         const query = searchBar.value.toLowerCase().trim();
 
@@ -77,23 +73,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Abrir o modal ao clicar nos botões de lupa
+    // Botões de lupa que abrem o modal
     const buttons = document.querySelectorAll(".fa-magnifying-glass");
     buttons.forEach(button => {
         button.addEventListener("click", () => {
-            modal.classList.remove("hidden");
+            modal.classList.add("show");
         });
     });
 
-    // Fechar o modal ao clicar no botão fechar
-    modal.querySelector("#close-modal").addEventListener("click", () => {
-        modal.classList.add("hidden");
+    // Fechar modal clicando no botão X
+    modal.querySelector(".close").addEventListener("click", () => {
+        modal.classList.remove("show");
     });
 
-    // Fechar o modal ao clicar fora da área do conteúdo
+    // Fechar modal clicando fora do conteúdo
     modal.addEventListener("click", (event) => {
         if (event.target === modal) {
-            modal.classList.add("hidden");
+            modal.classList.remove("show");
         }
     });
 });
