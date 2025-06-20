@@ -16,9 +16,46 @@ document.addEventListener("DOMContentLoaded", () => {
             <h2 class="text-2xl font-bold mb-4">Ajuda</h2>
             <p class="text-gray-700">Este é o modal de ajuda. Aqui você pode encontrar informações sobre como utilizar os links e funcionalidades desta seção.</p>
             <ul class="mt-4 space-y-2 text-gray-700">
-                <li><strong>1.</strong> Clique no nome do tribunal ou certidão para abrir a página diretamente.</li>
-                <li><strong>2.</strong> Use a barra de pesquisa para localizar rapidamente o tribunal ou certidão desejada.</li>
-                <li><strong>3.</strong> Caso precise de suporte adicional, entre em contato com a equipe responsável.</li>
+                <li><strong>-</strong> TRT-2.</li>
+                <li><strong>1.</strong> SÃO PAULO</li>
+                <li><strong>2.</strong> ARUJA</li>
+                <li><strong>3.</strong> BARUERI</li>
+                <li><strong>4.</strong> BERTIOGA</li>
+                <li><strong>5.</strong> BIRITIBA-MIRIM</li>
+                <li><strong>6.</strong> CAIEIRAS</li>
+                <li><strong>7.</strong> CAJAMAR</li>
+                <li><strong>8.</strong> CARAPICUIBA</li>
+                <li><strong>9.</strong> COTIA</li>
+                <li><strong>10.</strong> CUBATÃO</li>
+                <li><strong>11.</strong> DIADEMA</li>
+                <li><strong>12.</strong> EMBU DAS ARTES</li>
+                <li><strong>13.</strong> EMBU-GUAÇU</li>
+                <li><strong>14.</strong> FERRAZ DE VASCONCELOS</li>
+                <li><strong>15.</strong> FRANCISCO MORATO</li>
+                <li><strong>16.</strong> FRANCO DA ROCHA</li>
+                <li><strong>17.</strong> GUARAREMA</li>
+                <li><strong>18.</strong> GUARUJA</li>
+                <li><strong>19.</strong> GUARULHOS</li>
+                <li><strong>20.</strong> IBIUNA</li>
+                <li><strong>21.</strong> ITAPECERICA DA SERRA</li>
+                <li><strong>22.</strong> ITAPEVI</li>
+                <li><strong>23.</strong> ITAQUAQUECETUBA</li>
+                <li><strong>24.</strong> JANDIRA</li>
+                <li><strong>25.</strong> JUQUITIBA</li>
+                <li><strong>26.</strong> MARIPORÃ</li>
+                <li><strong>27.</strong> OSASCO</li>
+                <li><strong>28.</strong> PIRAPORA DO BOM JESUS</li>
+                <li><strong>29.</strong> POA</li>
+                <li><strong>30.</strong> SANTA ISABEL</li>
+                <li><strong>31.</strong> SANTADA DE PARNAIBA</li>
+                <li><strong>32.</strong> SANTO ANDRÉ</li>
+                <li><strong>33.</strong> SANTOS</li>
+                <li><strong>34.</strong> SÃO BERNARDO DO CAMPO</li>
+                <li><strong>35.</strong> SÃO CAETANO DO SUL</li>
+                <li><strong>36.</strong> SÃO LOURENÇO DA SERRA</li>
+                <li><strong>37.</strong> SÃO VICENTE</li>
+                <li><strong>38.</strong> VARGEM GRANDE PAULISTA</li>
+                <li><strong>3.</strong> Cidades não listadas acima se referem ao TRT-15 (informações unicas e exclusivas ao Estado de São Paulo).</li>
             </ul>
         </div>
     `;
