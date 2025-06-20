@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
             <h2 class="text-2xl font-bold mb-4">Ajuda</h2>
             <p class="text-gray-700">Este é o modal de ajuda. Aqui você pode encontrar informações sobre como utilizar os links e funcionalidades desta seção.</p>
-            <ul class="mt-4 space-y-2 text-gray-700">
+            <ul class="mt-4 space-y-2 text-gray-700 overflow-y-auto max-h-96 pr-2">
                 <li><strong>-</strong> TRT-2.</li>
                 <li><strong>1.</strong> SÃO PAULO</li>
                 <li><strong>2.</strong> ARUJA</li>
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li><strong>28.</strong> PIRAPORA DO BOM JESUS</li>
                 <li><strong>29.</strong> POA</li>
                 <li><strong>30.</strong> SANTA ISABEL</li>
-                <li><strong>31.</strong> SANTADA DE PARNAIBA</li>
+                <li><strong>31.</strong> SANTANA DE PARNAÍBA</li>
                 <li><strong>32.</strong> SANTO ANDRÉ</li>
                 <li><strong>33.</strong> SANTOS</li>
                 <li><strong>34.</strong> SÃO BERNARDO DO CAMPO</li>
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li><strong>36.</strong> SÃO LOURENÇO DA SERRA</li>
                 <li><strong>37.</strong> SÃO VICENTE</li>
                 <li><strong>38.</strong> VARGEM GRANDE PAULISTA</li>
-                <li><strong>3.</strong> Cidades não listadas acima se referem ao TRT-15 (informações unicas e exclusivas ao Estado de São Paulo).</li>
+                <li><strong>39.</strong> Cidades não listadas acima se referem ao TRT-15 (informações exclusivas ao Estado de São Paulo).</li>
             </ul>
         </div>
     `;
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Adiciona funcionalidade ao botão de lupa para exibir o modal
+    // Abrir o modal ao clicar nos botões de lupa
     const buttons = document.querySelectorAll(".fa-magnifying-glass");
     buttons.forEach(button => {
         button.addEventListener("click", () => {
@@ -85,12 +85,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Fechar o modal
-    document.getElementById("close-modal").addEventListener("click", () => {
+    // Fechar o modal ao clicar no botão fechar
+    modal.querySelector("#close-modal").addEventListener("click", () => {
         modal.classList.add("hidden");
     });
 
-    // Fechar o modal clicando fora dele
+    // Fechar o modal ao clicar fora da área do conteúdo
     modal.addEventListener("click", (event) => {
         if (event.target === modal) {
             modal.classList.add("hidden");
