@@ -54,7 +54,7 @@ document.querySelector('.btn-concluido').addEventListener('click', function (eve
   localStorage.setItem('ativoCirculante', JSON.stringify(dados));
 
   // Redireciona após salvar
-  window.location.href = "/front/values.html";
+  window.location.href = "values.html";
 });
 
 // Modal: abrir e fechar
