@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Cliente - Análise Pessoa Jurídica</title>
+  <link rel="stylesheet" href="/templates/registration.css">
+</head>
+<body>
+  <div class="cadastro-container">
+    <h2>Cadastro de Cliente</h2>
+    <form id="cadastroForm" action="#" method="POST" novalidate>
+      
+      <div class="form-group">
+        <label for="nomeCliente">Nome do Cliente</label>
+        <input
+          type="text"
+          id="nomeCliente"
+          name="nomeCliente"
+          placeholder="Ex: Empresa XYZ Ltda."
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="grupoCota">Grupo / Cota</label>
+        <input
+          type="text"
+          id="grupoCota"
+          name="grupoCota"
+          placeholder="Ex: Grupo 150 / Cota 20"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="ramo">Ramo de Funcionamento</label>
+        <input
+          type="text"
+          id="ramo"
+          name="ramo"
+          placeholder="Ex: Imobiliário, Administrativo, Urbanismo..."
+          required
+        />
+      </div>
+    <a href="index.html" class="btn-voltar">← Voltar</a>
+<div class="btn-container">
+  <button type="submit" class="btn-acessar">Acessar</button>
+</div>    
+</form>
+  </div>
+  <script src="/backend/registration.js"></script>
+</body>
+</html>

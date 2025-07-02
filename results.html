@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultados - Análise Pessoa Jurídica</title>
+  <link rel="stylesheet" href="/templates/results.css" />
+  <!-- Adicione essas bibliotecas no seu results.html -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<a href="indicators.html" class="btn-voltar">← Voltar</a>
+
+<main class="results-container">
+  <h2>Resultados da Análise</h2>
+
+  <div class="results-grid">
+  <!-- Exemplo de um bloco por pergunta -->
+  <div class="result-card">
+    <div class="indice">Liquidez Corrente: <span class="indice-valor" id="indice1"></span></div>
+    <div class="pergunta">Como está a capacidade da empresa em pagar seus compromissos de curto prazo com os recursos disponíveis no curto prazo?</div>
+    <div class="resposta">
+      <select id="resposta1">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Linha 2 -->
+<div class="result-card">
+    <div class="indice">Liquidez seca: <span class="indice-valor" id="indice2"></span></div>
+    <div class="pergunta">Como está a capacidade da empresa em pagar suas dívidas de curto prazo, desconsiderando os estoques?</div>
+    <div class="resposta">
+      <select id="resposta2">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Linha 3 -->
+<div class="result-card">
+    <div class="indice">Liquidez Imediata: <span class="indice-valor" id="indice3"></span></div>
+    <div class="pergunta">Qual a situação da empresa em relação ao pagamento das obrigações de curto prazo com os recursos financeiros imediatos (caixa e banco)?</div>
+    <div class="resposta">
+      <select id="resposta3">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div>  
+
+  <!-- Linha 4 -->
+  <div class="result-card">
+    <div class="indice">Liquidez Geral: <span class="indice-valor" id="indice4"></span></div>
+    <div class="pergunta">Como está a capacidade da empresa em honrar todas as suas dívidas, de curto e longo prazo, com os recursos disponíveis?</div>
+    <div class="resposta">
+      <select id="resposta3">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div>  
+
+  <!-- Linha 5 -->
+ <div class="result-card">
+    <div class="indice">Grau de Endividamento: <span class="indice-valor" id="indice5"></span></div>
+    <div class="pergunta">Até que ponto a empresa está financiando suas atividades com capital de terceiros em comparação ao próprio capital?</div>
+    <div class="resposta">
+      <select id="resposta5">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div> 
+
+  <!-- Linha 6 -->
+ <div class="result-card">
+    <div class="indice">Part. Cap. Terc.: <span class="indice-valor" id="indice6"></span></div>
+    <div class="pergunta">Como está o nível de dependência da empresa em relação a recursos de terceiros para financiar suas operações?</div>
+    <div class="resposta">
+      <select id="resposta6">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div> 
+
+  <!-- Linha 7 -->
+ <div class="result-card">
+    <div class="indice">Part. Exigivel C/Prazo: <span class="indice-valor" id="indice7"></span></div>
+    <div class="pergunta">Quanto a empresa tomou de capitais de terceiros para o valor de cápital próprio?</div>
+    <div class="resposta">
+      <select id="resposta7">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div> 
+
+  <!-- Linha 8 -->
+   <div class="result-card">
+    <div class="indice">Ativo Circulante - Estoque: <span class="indice-valor" id="indice8"></span></div>
+    <div class="pergunta">Qual é a representatividade do estoque dentro do Ativo Circulante da empresa?</div>
+    <div class="resposta">
+      <select id="resposta8">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div> 
+
+  <!-- Linha 9 -->
+  <div class="result-card">
+    <div class="indice">ROA: <span class="indice-valor" id="indice9"></span></div>
+    <div class="pergunta">Qual o índice de eficiência da empresa de gerar o lucro com os ativos que possui?</div>
+    <div class="resposta">
+      <select id="resposta9">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div> 
+
+  <!-- Linha 10 -->
+ <div class="result-card">
+    <div class="indice">ROE: <span class="indice-valor" id="indice10"></span></div>
+    <div class="pergunta">Qual o índice de eficiência da empresa em gerar lucro com o capital investido pelos acionistas?</div>
+    <div class="resposta">
+      <select id="resposta10">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div> 
+
+  <!-- Linha 11 -->
+ <div class="result-card">
+    <div class="indice">ROI: <span class="indice-valor" id="indice11"></span></div>
+    <div class="pergunta">Qual o índice de rendimento em relação ao valor investido?</div>
+    <div class="resposta">
+      <select id="resposta11">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div> 
+
+    <!-- Linha 12 -->
+  <div class="result-card">
+    <div class="indice">Grau de Imobilizações: <span class="indice-valor" id="indice12"></span></div>
+    <div class="pergunta">Quanto do patrimônio líquido da empresa está comprometido com ativos imobilizados?</div>
+    <div class="resposta">
+      <select id="resposta12">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Linha 13 -->
+  <div class="result-card">
+    <div class="indice">Total do Ativo: <span class="indice-valor" id="indice13"></span></div>
+    <div class="pergunta">Qual o volume total de recursos controlados pela empresa, somando ativos de curto e longo prazo?</div>
+    <div class="resposta">
+      <select id="resposta13">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Linha 14 -->
+  <div class="result-card">
+    <div class="indice">Total do Passivo: <span class="indice-valor" id="indice14"></span></div>
+    <div class="pergunta">Qual o total das obrigações financeiras da empresa com terceiros?</div>
+    <div class="resposta">
+      <select id="resposta14">
+        <option value="">Selecione...</option>
+        <option>Risco</option>
+        <option>Alerta</option>
+        <option>Boa</option>
+        <option>Excelente</option>
+      </select>
+    </div>
+  </div>
+
+
+</main>
+<div class="exportar-container">
+  <button id="btn-exportar" class="btn-exportar">Exportar Resultados</button>
+</div>
+  <script src="/backend/results.js"></script>
+
+</body>
+</html>

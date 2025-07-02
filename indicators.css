@@ -1,0 +1,362 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f4f8;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.indicadores-container {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeIn 1s ease;
+}
+
+.indicadores-container h2 {
+  color: #0a3d62;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table thead {
+  background-color: #0a3d62;
+  color: white;
+}
+
+table th,
+table td {
+  padding: 12px 10px;
+  border: 1px solid #d1d8e0;
+  text-align: left;
+  vertical-align: top;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f5f7fa;
+}
+
+table td:nth-child(2),
+table td:nth-child(4) {
+  font-weight: 600;
+}
+
+.acoes {
+  text-align: center;
+}
+
+#verInformacoes {
+  background-color: #0a3d62;
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#verInformacoes:hover {
+  background-color: #065082;
+  box-shadow: 0 6px 12px rgba(6, 80, 130, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  table thead {
+    display: none;
+  }
+
+  table, table tbody, table tr, table td {
+    display: block;
+    width: 100%;
+  }
+
+  table tr {
+    margin-bottom: 15px;
+    border: 1px solid #d1d8e0;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  table td {
+    border: none;
+    padding: 8px 0;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    color: #0a3d62;
+    margin-bottom: 4px;
+  }
+}
+
+  #ativoCirculanteDados,
+#ativoNaoCirculanteDados,
+#passivocirculante,
+#passivoNaoCirculanteDados,
+#Patrimonio,
+#DREDados {
+  margin-top: 2rem;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 600px;
+  font-family: Arial, sans-serif;
+}
+
+#ativoCirculanteDados th, #ativoCirculanteDados td,
+#ativoNaoCirculanteDados th, #ativoNaoCirculanteDados td,
+#passivocirculante th, #passivocirculante td,
+#passivoNaoCirculanteDados th, #passivoNaoCirculanteDados td,
+#Patrimonio th, #Patrimonio td,
+#DREDados th, #DREDados td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: right;
+}
+
+#ativoCirculanteDados th:first-child,
+#ativoCirculanteDados td:first-child,
+#ativoNaoCirculanteDados th:first-child,
+#ativoNaoCirculanteDados td:first-child,
+#passivocirculante th:first-child,
+#passivocirculante td:first-child,
+#passivoNaoCirculanteDados th:first-child,
+#passivoNaoCirculanteDados td:first-child,
+#Patrimonio th:first-child,
+#Patrimonio td:first-child,
+#DREDados th:first-child,
+#DREDados td:first-child {
+  text-align: left;
+}
+
+#ativoCirculanteDados caption,
+#ativoNaoCirculanteDados caption,
+#passivocirculante caption,
+#passivoNaoCirculanteDados caption,
+#Patrimonio caption,
+#DREDados caption {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+.btn-confirmar {
+  background-color: #0a3d62;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 8px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn-confirmar:hover:not(:disabled) {
+  background-color: #065082;
+}
+
+.btn-confirmar:disabled {
+  background-color: #17c21c;
+  cursor: default;
+}
+.acoes .btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-acessar {
+  display: inline-block;
+  background-color: #0a3d68; /* Azul padrão */
+  color: #ffffff; /* Texto branco */
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-acessar:hover {
+  background-color: #0a3d68; /* Azul mais escuro no hover */
+  box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
+}
+
+.indicadores-container {
+  position: relative;
+}
+
+.grafico-box-individual {
+  position: absolute;
+  right: 10px; /* Agora vai funcionar relativo ao container */
+  width: 350px;
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.grafico-box-individual h4 {
+  margin-bottom: 10px;
+  color: #1d4ed8;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Container de rolagem individual dentro de cada gráfico */
+.grafico-scroll {
+  max-height: 220px;        /* Altura visível antes do scroll */
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Scrollbar personalizada só dentro de cada gráfico */
+.grafico-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.grafico-scroll::-webkit-scrollbar-thumb {
+  background-color: #1d4ed8;
+  border-radius: 4px;
+}
+
+.grafico-scroll::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+.btn-acessar.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
+  user-select: none;
+}
+.navbar {
+  background-color: #0a3d62;
+  color: white;
+  padding: 12px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* centraliza o container */
+  align-items: center;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* links centralizados */
+  position: relative; /* para posicionar o botão voltar */
+  gap: 30px;
+}
+
+/* Logo alinhada à esquerda */
+.navbar-logo {
+  position: absolute;
+  left: 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Botão de voltar posicionado à direita */
+.btn-voltar-nav {
+  position: absolute;
+  right: 20px;
+  background-color: #3a7bd5; /* azul mais claro */
+  color: white;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-voltar-nav:hover {
+  background-color: #2a5ca8; /* azul mais escuro no hover */
+}
+
+/* Links centralizados */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+}
+
+.navbar-links a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-links .ativo {
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+/* Evita que o conteúdo fique atrás do navbar fixo */
+body {
+  padding-top: 60px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .navbar-container {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-voltar-nav {
+    position: static;
+    margin-left: auto;
+    margin-top: 8px;
+  }
+  .navbar-logo {
+    position: static;
+    margin-right: auto;
+    margin-bottom: 8px;
+  }
+}

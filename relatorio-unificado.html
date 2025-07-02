@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="/backend/indicators.js"></script>
+  <script src="/backend/indicators-charts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/backend/results.js"></script>
+  <link rel="stylesheet" href="/templates/relatorio-unificado.css" />
+</head>
+<body>
+  <header class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-logo">Análise PJ</div>
+    <nav class="navbar-links">
+      <a href="/front/registration.html">Cadastro</a>
+      <a href="/front/values.html">Preenchimento</a>
+      <a href="/front/indicators.html">Indicadores</a>
+      <a href="/front/relatorio-unificado.html" class="ativo">Relatório</a>
+      <a href="/front/index.html">Sair</a>
+    </nav>
+    <a href="/front/indicators.html" class="btn-voltar-nav">← Voltar</a>
+  </div>
+</header>
+
+<div id="loading-screen">
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+    <p>Carregando relatório, por favor aguarde...</p>
+  </div>
+</div>
+
+
+<main id="relatorio-completo">
+  <div id="pagina1">
+  <section id="usuario-info">
+  <p>Usuário Logado: <span id="usuarioNome"></span></p>
+  <p>Cliente: <span id="clienteNome"></span></p>
+  <p>Grupo e Cota: <span id="clienteGrupoCota"></span></p>
+  <p>Ramo: <span id="clienteRamo"></span></p>
+</section>
+
+<div class="titulo-flutuante-centralizado">RELATORIO</div>
+  <div class="section" id="indicators-section">
+    <!-- Tabela: Ativo Circulante -->
+    <div class="section" id="indicators-section">
+
+  <!-- Tabela: Ativo Circulante -->
+  <table id="ativoCirculanteDados" class="dados-tabela" aria-label="Dados do Ativo Circulante">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Ano Vigente</th>
+        <th>Ano Anterior</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Conteúdo será inserido via JavaScript -->
+    </tbody>
+  </table>
+
+  <!-- Tabela: Ativo Não Circulante -->
+  <table id="ativoNaoCirculanteDados" class="dados-tabela" aria-label="Dados do Ativo Não Circulante">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Ano Vigente</th>
+        <th>Ano Anterior</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Conteúdo será inserido via JavaScript -->
+    </tbody>
+  </table>
+
+  <!-- Tabela: Passivo Circulante -->
+  <table id="passivocirculante" class="dados-tabela" aria-label="Dados do Passivo Circulante">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Ano Vigente</th>
+        <th>Ano Anterior</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Conteúdo será inserido via JavaScript -->
+    </tbody>
+  </table>
+
+  <!-- Tabela: Passivo Não Circulante -->
+  <table id="passivoNaoCirculanteDados" class="dados-tabela" aria-label="Dados do Passivo Não Circulante">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Ano Vigente</th>
+        <th>Ano Anterior</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Conteúdo será inserido via JavaScript -->
+    </tbody>
+  </table>
+
+  <!-- Tabela: Patrimonio Liquido -->
+  <table id="Patrimonio" class="dados-tabela" aria-label="Dados do Patrimonio Liquido">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Ano Vigente</th>
+        <th>Ano Anterior</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Conteúdo será inserido via JavaScript -->
+    </tbody>
+  </table>
+
+  <!-- Tabela: DRE -->
+  <table id="DREDados" class="dados-tabela" aria-label="DRE - Demonstração do Resultado do Exercício">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Ano Vigente</th>
+        <th>Ano Anterior</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Conteúdo será inserido via JavaScript -->
+    </tbody>
+  </table>
+</div>
+
+    <div id="pagina2">
+      <div class="titulo-flutuante-centralizado2">GRAFICOS</div>
+        <!-- Gráfico Ativo Circulante -->
+        <div class="graficos-container">
+
+          <div class="grafico-box-individual">
+            <h4>Ativo Circulante</h4>
+            <canvas id="graficoAtivoCirculante"></canvas>
+          </div>
+
+          <div class="grafico-box-individual">
+            <h4>Ativo Não Circulante</h4>
+            <canvas id="graficoAtivoNaoCirculante"></canvas>
+          </div>
+
+          <div class="grafico-box-individual">
+            <h4>Passivo Circulante</h4>
+            <canvas id="graficoPassivoCirculante"></canvas>
+          </div>
+
+          <div class="grafico-box-individual">
+            <h4>Passivo Não Circulante</h4>
+            <canvas id="graficoPassivoNaoCirculante"></canvas>
+          </div>
+
+          <div class="grafico-box-individual">
+            <h4>Patrimônio Líquido</h4>
+            <canvas id="graficoPatrimonio"></canvas>
+          </div>
+
+          <div class="grafico-box-individual">
+            <h4>DRE</h4>
+            <canvas id="graficoDRE"></canvas>
+          </div>
+
+        </div>
+        <div class="section" id="results-section">
+            <div id="pagina3">
+           <div class="titulo-flutuante-centralizado2">INDICADORES</div>
+
+        <div class="results-grid">
+          <!-- Exemplo de um bloco por pergunta -->
+<!-- Linha 1 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        Liquidez Corrente: <span class="indice-valor" id="indice1"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info1')">ℹ️</button>
+      </div>
+
+      <div class="pergunta">
+        Como está a capacidade da empresa em pagar seus compromissos de curto prazo com os recursos disponíveis no curto prazo?
+      </div>
+
+      <div class="resposta">
+        <select id="resposta1">
+          <option value="">Selecione...</option>
+          <option value="Risco">Risco</option>
+          <option value="Alerta">Alerta</option>
+          <option value="Boa">Boa</option>
+          <option value="Excelente">Excelente</option>
+        </select>
+
+        <p class="descricao-indice" id="info1" style="display: none;">
+          A <strong>Liquidez Corrente</strong> mede a capacidade da empresa de pagar suas dívidas de curto prazo utilizando seus ativos de curto prazo. Um valor acima de 1 indica saúde financeira.
+        </p>
+
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        Liquidez Corrente (Ano Anterior): <span class="indice-valor" id="indice1-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Indicador de liquidez corrente com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Linha 2 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        Liquidez Seca: <span class="indice-valor" id="indice2"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info2')">ℹ️</button>
+      </div>
+
+      <div class="pergunta">
+        Como está a capacidade da empresa em pagar suas dívidas de curto prazo, desconsiderando os estoques?
+      </div>
+
+      <div class="resposta">
+        <select id="resposta2">
+          <option value="">Selecione...</option>
+          <option value="Risco">Risco</option>
+          <option value="Alerta">Alerta</option>
+          <option value="Boa">Boa</option>
+          <option value="Excelente">Excelente</option>
+        </select>
+
+        <p class="descricao-indice" id="info2" style="display: none;">
+          A <strong>Liquidez Seca</strong> indica a capacidade da empresa de quitar suas obrigações de curto prazo sem contar com os estoques, que podem ter baixa liquidez. É um indicador mais conservador que a Liquidez Corrente.
+        </p>
+
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        Liquidez Seca (Ano Anterior): <span class="indice-valor" id="indice2-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Indicador de liquidez seca com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Linha 3 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        Liquidez Imediata: <span class="indice-valor" id="indice3"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info3')">ℹ️</button>
+      </div>
+
+      <div class="pergunta">
+        Qual a situação da empresa em relação ao pagamento das obrigações de curto prazo com os recursos financeiros imediatos (caixa e banco)?
+      </div>
+
+      <div class="resposta">
+        <select id="resposta3">
+          <option value="">Selecione...</option>
+          <option value="Risco">Risco</option>
+          <option value="Alerta">Alerta</option>
+          <option value="Boa">Boa</option>
+          <option value="Excelente">Excelente</option>
+        </select>
+
+        <p class="descricao-indice" id="info3" style="display: none;">
+          A <strong>Liquidez Imediata</strong> mede a capacidade da empresa de quitar imediatamente suas obrigações de curto prazo utilizando apenas os recursos disponíveis em caixa ou em contas bancárias.
+        </p>
+
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        Liquidez Imediata (Ano Anterior): <span class="indice-valor" id="indice3-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Liquidez imediata da empresa com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Linha 4 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        Liquidez Geral: <span class="indice-valor" id="indice4"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info4')">ℹ️</button>
+      </div>
+
+      <div class="pergunta">
+        Como está a capacidade da empresa em honrar todas as suas dívidas, de curto e longo prazo, com os recursos disponíveis?
+      </div>
+      <div class="resposta">
+        <select id="resposta4">
+          <option value="">Selecione...</option>
+          <option value="Risco">Risco</option>
+          <option value="Alerta">Alerta</option>
+          <option value="Boa">Boa</option>
+          <option value="Excelente">Excelente</option>
+        </select>
+
+        <p class="descricao-indice" id="info4" style="display: none;">
+          A <strong>Liquidez Geral</strong> avalia a capacidade da empresa de cumprir todas as suas obrigações, tanto de curto quanto de longo prazo, utilizando seus ativos totais (circulantes e não circulantes).
+        </p>
+
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        Liquidez Geral (Ano Anterior): <span class="indice-valor" id="indice4-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Índice de Liquidez Geral com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Linha 5 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        Grau de Endividamento: <span class="indice-valor" id="indice5"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info5')">ℹ️</button>
+      </div>
+
+      <div class="pergunta">
+        Até que ponto a empresa está financiando suas atividades com capital de terceiros em comparação ao próprio capital?
+      </div>
+
+      <div class="resposta">
+        <select id="resposta5">
+          <option value="">Selecione...</option>
+          <option>Risco</option>
+          <option>Alerta</option>
+          <option>Boa</option>
+          <option>Excelente</option>
+        </select>
+
+        <p class="descricao-indice" id="info5" style="display: none;">
+          O <strong>Grau de Endividamento</strong> indica qual a proporção de capital de terceiros (dívidas) está sendo utilizada para financiar o total dos recursos da empresa. Quanto maior, mais dependente de terceiros ela é.
+        </p>
+
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        Grau de Endividamento (Ano Anterior): <span class="indice-valor" id="indice5-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Grau de Endividamento da empresa com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Linha 6 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        Part. Cap. Terc.: <span class="indice-valor" id="indice6"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info6')">ℹ️</button>
+      </div>
+
+      <div class="pergunta">
+        Como está o nível de dependência da empresa em relação a recursos de terceiros para financiar suas operações?
+      </div>
+
+      <div class="resposta">
+        <select id="resposta6">
+          <option value="">Selecione...</option>
+          <option>Risco</option>
+          <option>Alerta</option>
+          <option>Boa</option>
+          <option>Excelente</option>
+        </select>
+
+        <p class="descricao-indice" id="info6" style="display: none;">
+          A <strong>Participação de Capitais de Terceiros</strong> mostra o quanto da estrutura de capital da empresa é composta por dívidas em comparação ao patrimônio próprio. Um valor muito alto pode indicar elevada dependência de financiamento externo.
+        </p>
+
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        Part. Cap. Terc. (Ano Anterior): <span class="indice-valor" id="indice6-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Participação de Capitais de Terceiros com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Linha 7 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        Part. Exigível C/Prazo: <span class="indice-valor" id="indice7"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info7')">ℹ️</button>
+      </div>
+
+      <div class="pergunta">
+        Quanto a empresa tomou de capitais de terceiros para o valor de capital próprio?
+      </div>
+
+      <div class="resposta">
+        <select id="resposta7">
+          <option value="">Selecione...</option>
+          <option>Risco</option>
+          <option>Alerta</option>
+          <option>Boa</option>
+          <option>Excelente</option>
+        </select>
+        <p class="descricao-indice" id="info7" style="display: none;">
+          A <strong>Participação do Exigível a Curto Prazo</strong> mostra a proporção das dívidas de curto prazo em relação ao total das obrigações da empresa. Um valor elevado pode indicar pressão imediata por pagamento, afetando o fluxo de caixa.
+        </p>
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        Part. Exigível C/Prazo (Ano Anterior): <span class="indice-valor" id="indice7-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Indicador baseado nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Linha 8 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        Ativo Circulante - Estoque: <span class="indice-valor" id="indice8"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info8')">ℹ️</button>
+      </div>
+
+      <div class="pergunta">
+        Qual é a representatividade do estoque dentro do Ativo Circulante da empresa?
+      </div>
+
+      <div class="resposta">
+        <select id="resposta8">
+          <option value="">Necessario Analise</option>
+          <option>Risco</option>
+          <option>Alerta</option>
+          <option>Boa</option>
+          <option>Excelente</option>
+        </select>
+        <p class="descricao-indice" id="info8" style="display: none;">
+          Este índice mede o quanto o <strong>estoque</strong> representa dentro do <strong>Ativo Circulante</strong>. Um valor muito alto pode indicar imobilização de recursos, afetando a liquidez da empresa.
+        </p>
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        Ativo Circulante - Estoque (Ano Anterior): <span class="indice-valor" id="indice8-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Representatividade do estoque no Ativo Circulante com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Linha 9 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        ROA: <span class="indice-valor" id="indice9"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info9')">ℹ️</button>
+      </div>
+      <div class="pergunta">
+        Qual o índice de eficiência da empresa de gerar o lucro com os ativos que possui?
+      </div>
+      <div class="resposta">
+        <select id="resposta9">
+          <option value="">Selecione...</option>
+          <option>Risco</option>
+          <option>Alerta</option>
+          <option>Boa</option>
+          <option>Excelente</option>
+        </select>
+        <p class="descricao-indice" id="info9" style="display: none;">
+          O <strong>ROA (Return on Assets)</strong> mostra o quanto a empresa consegue gerar de lucro com os ativos totais que possui. Quanto maior, melhor a eficiência do uso dos recursos.
+        </p>
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        ROA (Ano Anterior): <span class="indice-valor" id="indice9-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Eficiência da empresa em gerar lucro com seus ativos no ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Linha 10 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        ROE: <span class="indice-valor" id="indice10"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info10')">ℹ️</button>
+      </div>
+      <div class="pergunta">
+        Qual o índice de eficiência da empresa em gerar lucro com o capital investido pelos acionistas?
+      </div>
+      <div class="resposta">
+        <select id="resposta10">
+          <option value="">Selecione...</option>
+          <option>Risco</option>
+          <option>Alerta</option>
+          <option>Boa</option>
+          <option>Excelente</option>
+        </select>
+        <p class="descricao-indice" id="info10" style="display: none;">
+          O <strong>ROE (Return on Equity)</strong> indica o retorno que os acionistas estão obtendo sobre o capital investido na empresa. Quanto maior, melhor a rentabilidade do investimento dos acionistas.
+        </p>
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        ROE (Ano Anterior): <span class="indice-valor" id="indice10-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Índice de retorno sobre o capital próprio da empresa com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Linha 11 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        ROI: <span class="indice-valor" id="indice11"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info11')">ℹ️</button>
+      </div>
+      <div class="pergunta">
+        Qual o índice de rendimento em relação ao valor investido?
+      </div>
+      <div class="resposta">
+        <select id="resposta11">
+          <option value="">Selecione...</option>
+          <option>Risco</option>
+          <option>Alerta</option>
+          <option>Boa</option>
+          <option>Excelente</option>
+        </select>
+        <p class="descricao-indice" id="info11" style="display: none;">
+          O <strong>ROI (Return on Investment)</strong> mede a eficiência do investimento, indicando quanto lucro foi obtido em relação ao valor investido. Quanto maior, melhor o retorno.
+        </p>
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        ROI (Ano Anterior): <span class="indice-valor" id="indice11-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Indicador de retorno sobre o investimento com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Linha 12 -->
+<div class="result-card" onclick="this.classList.toggle('flipped')" style="position: relative;">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        Grau de Imobilizações: <span class="indice-valor" id="indice12"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info12')">ℹ️</button>
+      </div>
+      <div class="pergunta">
+        Qual o índice que indica a proporção dos ativos imobilizados no patrimônio da empresa?
+      </div>
+      <div class="resposta">
+        <select id="resposta12">
+          <option value="">Selecione...</option>
+          <option>Risco</option>
+          <option>Alerta</option>
+          <option>Boa</option>
+          <option>Excelente</option>
+        </select>
+        <p class="descricao-indice" id="info12" style="display: none;">
+          O <strong>Grau de Imobilizações</strong> indica quanto do patrimônio da empresa está investido em ativos fixos (imobilizados), refletindo sua capacidade de investimento em bens duráveis.
+        </p>
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        Grau de Imobilizações (Ano Anterior): <span class="indice-valor" id="indice12-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Proporção dos ativos imobilizados no patrimônio da empresa com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Linha 13 -->
+<div class="result-card" style="position: relative;" onclick="this.classList.toggle('flipped')">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        Total Ativo: <span class="indice-valor" id="indice13"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info13')">ℹ️</button>
+      </div>
+      <div class="pergunta">
+        Qual o total do Ativo da empresa?
+      </div>
+      <div class="resposta">
+        <select id="resposta13">
+          <option value="">Selecione...</option>
+          <option>Risco</option>
+          <option>Alerta</option>
+          <option>Boa</option>
+          <option>Excelente</option>
+        </select>
+        <p class="descricao-indice" id="info13" style="display: none;">
+          O <strong>Total Ativo</strong> é a soma do <strong>Ativo Circulante</strong> e do <strong>Ativo não Circulante</strong>.
+        </p>
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        Total Ativo (Ano Anterior): <span class="indice-valor" id="indice13-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Total do Ativo da empresa com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Linha 14 -->
+<div class="result-card" style="position: relative;" onclick="this.classList.toggle('flipped')">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        Total Passivo: <span class="indice-valor" id="indice14"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info14')">ℹ️</button>
+      </div>
+      <div class="pergunta">
+        Qual o total do Passivo da empresa?
+      </div>
+      <div class="resposta">
+        <select id="resposta14">
+          <option value="">Selecione...</option>
+          <option>Risco</option>
+          <option>Alerta</option>
+          <option>Boa</option>
+          <option>Excelente</option>
+        </select>
+        <p class="descricao-indice" id="info14" style="display: none;">
+          O <strong>Total Passivo</strong> da empresa é a soma do <strong>Passivo Circulante + Passivo não circulante</strong>.
+        </p>
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        Total Passivo (Ano Anterior): <span class="indice-valor" id="indice14-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Total do passivo da empresa com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Linha 15 -->
+<div class="result-card" style="position: relative;" onclick="this.classList.toggle('flipped')">
+  <div class="card-inner">
+
+    <!-- Frente do Card -->
+    <div class="card-front">
+      <div class="indice">
+        EBITDA: <span class="indice-valor" id="indice15"></span>
+        <button class="info-btn" onclick="event.stopPropagation(); toggleInfo('info15')">ℹ️</button>
+      </div>
+      <div class="pergunta">
+A receita líquida se converte em lucro operacional antes de juros, impostos, depreciação e amortização?
+      </div>
+      <div class="resposta"> 
+        <select id="resposta15">
+          <option value="">Necessario Analise</option>
+          <option>Risco</option>
+          <option>Alerta</option>
+          <option>Boa</option>
+          <option>Excelente</option>
+        </select>
+        <p class="descricao-indice" id="info15" style="display: none;">
+          <strong>EBITDA (Earnings Before Interest, Taxes, Depreciation and Amortization)</strong>
+          mostra o lucro operacional de uma empresa, ou seja, quanto ela gera com sua atividade principal, 
+          sem considerar gastos financeiros e contábeis (como <strong>depreciação</strong> e 
+          <strong>amortização</strong>).
+        </p>
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Mostrar Ano Anterior
+        </button>
+      </div>
+    </div>
+
+    <!-- Verso do Card -->
+    <div class="card-back">
+      <div class="indice">
+        EBITDA (Ano Anterior): <span class="indice-valor" id="indice15-anterior"></span>
+      </div>
+      <div class="pergunta">
+        Valor de EBITDA da empresa com base nos dados do ano anterior.
+      </div>
+      <div class="resposta">
+        <button class="rotate-btn" onclick="event.stopPropagation(); this.closest('.result-card').classList.toggle('flipped')">
+          Voltar
+        </button>
+      </div>
+    </div>
+</div>
+</div>
+
+
+
+<!-- Removido o container de pergunta e botões -->
+
+<div id="campoComentario">
+  <h3>Comentário Interno da Análise:</h3>
+  <textarea id="comentarioAnalise" placeholder="Escreva aqui sua análise..." rows="8"></textarea>
+  <button type="button" id="btnSalvarComentario">Salvar Comentário</button>
+</div>
+
+
+
+<!-- Comentário armazenado, invisível na tela mas visível no PDF -->
+<div id="comentarioAnaliseTexto" style="display: none;"></div>
+
+   </main>
+   
+          <button id="btn-exportar">Exportar PDF</button>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+          <script src="/backend/relatorio-unificado.js"></script>
+</body>
+
+</html>

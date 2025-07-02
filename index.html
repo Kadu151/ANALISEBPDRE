@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Análise Pessoa Jurídica</title>
+<link rel="stylesheet" href="/templates/login.css" />
+</head>
+<body>
+  <main class="login-container" role="main" aria-label="Formulário de Login para análise de pessoa jurídica">
+    <h2>Login </h2>
+    <form id="loginForm" action="#" method="POST" novalidate>
+      <label for="username">Nome de Usuário</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Digite seu nome de usuário"
+        required
+        autocomplete="username"
+      />
+
+      <label for="password">Senha</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Digite sua senha"
+        required
+        autocomplete="current-password"
+      />
+
+<div class="btn-container">
+  <button type="submit" class="btn-acessar">Acessar</button>
+</div>
+<div id="error-message" style="display:none; color:red;">Usuário ou senha incorretos.</div>
+<script src="/backend/login.js"></script>
+    </form>
+  </main>
+</body>
+</html>

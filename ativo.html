@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ativo Circulante - Análise Pessoa Jurídica</title>
+  <link rel="stylesheet" href="/templates/ativo.css" />
+</head>
+<body>
+
+  <div class="ativo-container">
+    <h2>Ativo Circulante</h2>
+
+    <button class="info-toggle-btn" id="btnInfoAtivo">ℹ️ Info</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Ano Vigente</th>
+          <th>Ano Anterior</th>
+        </tr>
+      </thead>
+<tbody>
+  <tr>
+    <td><strong>Ativo Circulante</strong></td>
+    <td><input type="number" id="ativo_vigente" oninput="calcularOutrosAtivos()"></td>
+    <td><input type="number" id="ativo_anterior" oninput="calcularOutrosAtivos()"></td>
+  </tr>
+  <tr>
+    <td>Disponível</td>
+    <td><input type="number" id="disponivel_vigente" oninput="calcularOutrosAtivos()"></td>
+    <td><input type="number" id="disponivel_anterior" oninput="calcularOutrosAtivos()"></td>
+  </tr>
+  <tr>
+    <td>Estoque</td>
+    <td><input type="number" id="estoque_vigente" oninput="calcularOutrosAtivos()"></td>
+    <td><input type="number" id="estoque_anterior" oninput="calcularOutrosAtivos()"></td>
+  </tr>
+  <tr>
+    <td>Contas a Receber</td>
+    <td><input type="number" id="contas_vigente" oninput="calcularOutrosAtivos()"></td>
+    <td><input type="number" id="contas_anterior" oninput="calcularOutrosAtivos()"></td>
+  </tr>
+  <tr>
+    <td>Impostos a Recuperar</td>
+    <td><input type="number" id="impostos_vigente" oninput="calcularOutrosAtivos()"></td>
+    <td><input type="number" id="impostos_anterior" oninput="calcularOutrosAtivos()"></td>
+  </tr>
+  <tr>
+    <td>Caixas e Equivalentes a Caixa</td>
+    <td><input type="number" id="caixa_vigente" oninput="calcularOutrosAtivos()"></td>
+    <td><input type="number" id="caixa_anterior" oninput="calcularOutrosAtivos()"></td>
+  </tr>
+  <tr>
+    <td><strong>Outros Ativos</strong></td>
+    <td><input type="number" id="outros_vigente" readonly></td>
+    <td><input type="number" id="outros_anterior" readonly></td>
+  </tr>
+</tbody>
+
+    </table>
+
+    <div class="acoes">
+      <a href="/front/values.html" class="btn-concluido">Concluído</a>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalInfoAtivo">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar modal">&times;</button>
+      <h3 id="modalTitle">O que é Ativo Circulante?</h3>
+      <p>O Ativo Circulante representa todos os bens e direitos da empresa que podem ser convertidos em dinheiro no curto prazo, como caixa, estoques e contas a receber.</p>
+    </div>
+  </div>
+
+  <script src="/backend/ativo.js"></script>
+
+</body>
+</html>

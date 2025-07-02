@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Passivo não Circulante - Análise Pessoa Jurídica</title>
+ <link rel="stylesheet" href="/templates/ativo.css" />
+</head>
+<body>
+
+<div class="ativo-container">
+  <h2>Passivo não Circulante</h2>
+
+  <button class="info-toggle-btn" id="btnInfoPassivoNao">ℹ️ Info</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Ano Vigente</th>
+        <th>Ano Anterior</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Passivo não Circulante</strong></td>
+        <td><input type="number" name="total_vigente" oninput="calcularOutrosPassivosNao()"></td>
+        <td><input type="number" name="total_anterior" oninput="calcularOutrosPassivosNao()"></td>
+      </tr>
+      <tr>
+        <td>Financiamento a longo prazo</td>
+        <td><input type="number" name="financiamentolongo_vigente" oninput="calcularOutrosPassivosNao()"></td>
+        <td><input type="number" name="financiamentolongo_anterior" oninput="calcularOutrosPassivosNao()"></td>
+      </tr>
+      <tr>
+        <td>Empréstimos a longo prazo</td>
+        <td><input type="number" name="emprestimolongo_vigente" oninput="calcularOutrosPassivosNao()"></td>
+        <td><input type="number" name="emprestimolongo_anterior" oninput="calcularOutrosPassivosNao()"></td>
+      </tr>
+      <tr>
+        <td>Parcelamento de Imposto</td>
+        <td><input type="number" name="parcelamentoimposto_vigente" oninput="calcularOutrosPassivosNao()"></td>
+        <td><input type="number" name="parcelamentoimposto_anterior" oninput="calcularOutrosPassivosNao()"></td>
+      </tr>
+      <tr>
+        <td><strong>Outros passivos não circulantes</strong></td>
+        <td><input type="number" name="outrospassivosnao_vigente" readonly></td>
+        <td><input type="number" name="outrospassivosnao_anterior" readonly></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="acoes">
+    <a href="/front/values.html" class="btn-concluido">Concluído</a>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalInfoPassivoNao">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitlePassivoNao">
+    <button class="modal-close-btn" id="modalCloseBtnPassivoNao" aria-label="Fechar modal">&times;</button>
+    <h3 id="modalTitlePassivoNao">O que é Passivo não Circulante?</h3>
+    <p>
+      O Passivo não Circulante representa as obrigações financeiras da empresa que possuem prazo de pagamento longo, como financiamentos a longo prazo e parcelamento de impostos.
+    </p>
+  </div>
+</div>
+
+<script src="/backend/passivonao.js"></script>
+
+
+</body>
+</html>

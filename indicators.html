@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indicadores - Análise Pessoa Jurídica</title>
+  <link rel="stylesheet" href="/templates/indicators.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+ <header class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-logo">Análise PJ</div>
+    <nav class="navbar-links">
+      <a href="/front/registration.html">Cadastro</a>
+      <a href="/front/values.html">Preenchimento</a>
+      <a href="/front/indicators.html" class="ativo">Indicadores</a>
+      <a href="/front/index.html">Sair</a>
+    </nav>
+    <a href="values.html" class="btn-voltar-nav">← Voltar</a>
+  </div>
+</header>
+
+
+  <div class="indicadores-container">
+    <h2>Resumo dos Valores Preenchidos</h2>
+
+    <!-- Tabela: Ativo Circulante -->
+    <table id="ativoCirculanteDados" class="dados-tabela" aria-label="Dados do Ativo Circulante">
+      <caption>Ativo Circulante - Valores Preenchidos</caption>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Ano Vigente</th>
+          <th>Ano Anterior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Conteúdo será inserido via JavaScript -->
+      </tbody>
+    </table>
+
+    <div class="acoes">
+      <button class="btn-confirmar" data-tabela="ativoCirculanteDados">Confirmar Ativo Circulante</button>
+    </div>
+
+    <!-- Tabela: Ativo Não Circulante -->
+    <table id="ativoNaoCirculanteDados" class="dados-tabela" aria-label="Dados do Ativo Não Circulante">
+      <caption>Ativo Não Circulante - Valores Preenchidos</caption>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Ano Vigente</th>
+          <th>Ano Anterior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Conteúdo será inserido via JavaScript -->
+      </tbody>
+    </table>
+
+    <div class="acoes">
+      <button class="btn-confirmar" data-tabela="ativoNaoCirculanteDados">Confirmar Ativo Não Circulante</button>
+    </div>
+
+    <!-- Tabela: Passivo Circulante -->
+    <table id="passivocirculante" class="dados-tabela" aria-label="Dados do Passivo Circulante">
+      <caption>Passivo Circulante - Valores Preenchidos</caption>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Ano Vigente</th>
+          <th>Ano Anterior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Conteúdo será inserido via JavaScript -->
+      </tbody>
+    </table>
+
+    <div class="acoes">
+      <button class="btn-confirmar" data-tabela="passivocirculante">Confirmar Passivo Circulante</button>
+    </div>
+
+    <!-- Tabela: Passivo Não Circulante -->
+    <table id="passivoNaoCirculanteDados" class="dados-tabela" aria-label="Dados do Passivo Não Circulante">
+      <caption>Passivo Não Circulante - Valores Preenchidos</caption>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Ano Vigente</th>
+          <th>Ano Anterior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Conteúdo será inserido via JavaScript -->
+      </tbody>
+    </table>
+
+    <div class="acoes">
+      <button class="btn-confirmar" data-tabela="passivoNaoCirculanteDados">Confirmar Passivo Não Circulante</button>
+    </div>
+
+    <!-- Tabela: Patrimonio Liquido -->
+    <table id="Patrimonio" class="dados-tabela" aria-label="Dados do Patrimonio Liquido">
+      <caption>Patrimonio liquido - Valores Preenchidos</caption>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Ano Vigente</th>
+          <th>Ano Anterior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Conteúdo será inserido via JavaScript -->
+      </tbody>
+    </table>
+
+    <div class="acoes">
+      <button class="btn-confirmar" data-tabela="Patrimonio">Confirmar Patrimonio Liquido</button>
+    </div>
+
+    <!-- Tabela: DRE -->
+    <table id="DREDados" class="dados-tabela" aria-label="DRE - Demonstração do Resultado do Exercício">
+      <caption>DRE - Demonstração do Resultado do Exercício</caption>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Ano Vigente</th>
+          <th>Ano Anterior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Conteúdo será inserido via JavaScript -->
+      </tbody>
+    </table>
+
+    <div class="acoes">
+      <button class="btn-confirmar" data-tabela="DREDados">Confirmar DRE</button>
+    </div>
+
+    <!-- Container lateral direita para os gráficos -->
+    <div class="grafico-box-individual" style="top: 200px;">
+      <h4>Ativo Circulante</h4>
+      <div class="grafico-scroll">
+        <canvas id="graficoAtivoCirculante"></canvas>
+      </div>
+    </div>
+
+    <!-- Gráfico Ativo Não Circulante -->
+    <div class="grafico-box-individual" style="top: 600px;">
+      <h4>Ativo Não Circulante</h4>
+      <div class="grafico-scroll">
+        <canvas id="graficoAtivoNaoCirculante"></canvas>
+      </div>
+    </div>
+
+    <!-- Gráfico Passivo Circulante -->
+    <div class="grafico-box-individual" style="top: 950px;">
+      <h4>Passivo Circulante</h4>
+      <div class="grafico-scroll">
+        <canvas id="graficoPassivoCirculante"></canvas>
+      </div>
+    </div>
+
+    <!-- Gráfico Passivo Não Circulante -->
+    <div class="grafico-box-individual" style="top: 1280px;">
+      <h4>Passivo Não Circulante</h4>
+      <div class="grafico-scroll">
+        <canvas id="graficoPassivoNaoCirculante"></canvas>
+      </div>
+    </div>
+
+    <!-- Gráfico Patrimônio Líquido -->
+    <div class="grafico-box-individual" style="top: 1600px;">
+      <h4>Patrimônio Líquido</h4>
+      <div class="grafico-scroll">
+        <canvas id="graficoPatrimonio"></canvas>
+      </div>
+    </div>
+
+    <!-- Gráfico DRE -->
+    <div class="grafico-box-individual" style="top: 1950px;">
+      <h4>DRE</h4>
+      <div class="grafico-scroll">
+        <canvas id="graficoDRE"></canvas>
+      </div>
+    </div>
+
+    <div class="acoes">
+      <!-- Botão final de Ver Resultados -->
+      <div class="btn-container">
+        <a href="relatorio-unificado.html" class="btn-acessar disabled" tabindex="-1" aria-disabled="true">Ver Resultados</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/backend/indicators.js"></script>
+  <script src="/backend/indicators-charts.js"></script>
+</body>
+</html>

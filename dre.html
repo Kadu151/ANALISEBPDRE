@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DRE - Análise Pessoa Jurídica</title>
+  <link rel="stylesheet" href="/templates/ativo.css" />
+  <style>
+    table input {
+      width: 120px;
+      padding: 5px;
+      text-align: right;
+    }
+    .total-input {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
+    .ativo-container {
+      position: relative;
+      padding: 20px;
+    }
+    .info-toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      max-width: 450px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      position: relative;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.5;
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ativo-container">
+    <h2>DRE</h2>
+
+    <button class="info-toggle-btn" id="btnInfoDRE">ℹ️ Info</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Ano Vigente</th>
+          <th>Ano Anterior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Receita</td>
+          <td><input type="number" name="Receita_vigente" oninput="calcularTotal()"></td>
+          <td><input type="number" name="Receita_anterior" oninput="calcularTotal()"></td>
+        </tr>
+        <tr>
+          <td>Custo</td>
+          <td><input type="number" name="Custo_vigente" oninput="calcularTotal()"></td>
+          <td><input type="number" name="Custo_anterior" oninput="calcularTotal()"></td>
+        </tr>
+        <tr>
+          <td>Lucro Operacional</td>
+          <td><input type="number" name="LucroOperacional_vigente" oninput="calcularTotal()"></td>
+          <td><input type="number" name="LucroOperacional_anterior" oninput="calcularTotal()"></td>
+        </tr>
+        <tr>
+          <td>Lucro Liquido</td>
+          <td><input type="number" name="LucroLiquido_vigente" oninput="calcularTotal()"></td>
+          <td><input type="number" name="LucroLiquido_anterior" oninput="calcularTotal()"></td>
+        </tr>
+        <tr>
+          <td>Lucro Bruto</td>
+          <td><input type="number" name="LucroBruto_vigente" oninput="calcularTotal()"></td>
+          <td><input type="number" name="LucroBruto_anterior" oninput="calcularTotal()"></td>
+        </tr>
+        <tr>
+          <td>Receitas Liquidas</td>
+          <td><input type="number" name="ReceitasLiquidas_vigente" oninput="calcularTotal()"></td>
+          <td><input type="number" name="ReceitasLiquidas_anterior" oninput="calcularTotal()"></td>
+        </tr>
+          <tr>
+          <td>Amortização</td>
+          <td><input type="number" name="Amortizacao_vigente" oninput="calcularTotal()"></td>
+          <td><input type="number" name="Amortizacao_anterior" oninput="calcularTotal()"></td>
+        </tr>
+          <tr>
+          <td>Depreciação</td>
+          <td><input type="number" name="Depreciacao_vigente" oninput="calcularTotal()"></td>
+          <td><input type="number" name="Depreciacao_anterior" oninput="calcularTotal()"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="acoes">
+      <a href="/front/values.html" class="btn-concluido">Concluído</a>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalInfoDRE">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitleDRE">
+      <button class="modal-close-btn" id="modalCloseBtnDRE" aria-label="Fechar modal">&times;</button>
+      <h3 id="modalTitleDRE">O que é DRE?</h3>
+      <p>
+        A Demonstração do Resultado do Exercício (DRE) é um relatório contábil que demonstra o desempenho financeiro da empresa durante um determinado período, detalhando receitas, custos, despesas e o lucro líquido.
+      </p>
+    </div>
+  </div>
+
+<script src="/backend/DRE.js"></script>
+
+<script>
+  const btnInfoDRE = document.getElementById('btnInfoDRE');
+  const modalDRE = document.getElementById('modalInfoDRE');
+  const btnCloseDRE = document.getElementById('modalCloseBtnDRE');
+
+  btnInfoDRE.addEventListener('click', () => {
+    modalDRE.classList.add('active');
+  });
+
+  btnCloseDRE.addEventListener('click', () => {
+    modalDRE.classList.remove('active');
+  });
+
+  modalDRE.addEventListener('click', (e) => {
+    if (e.target === modalDRE) {
+      modalDRE.classList.remove('active');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalDRE.classList.contains('active')) {
+      modalDRE.classList.remove('active');
+    }
+  });
+</script>
+
+</body>
+</html>

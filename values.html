@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valores - Análise Pessoa Jurídica</title>
+  <link rel="stylesheet" href="/templates/values.css">
+</head>
+<body>
+  <a href="registration.html" class="btn-voltar">← Voltar</a>
+
+  <div class="indicadores-container">
+    <div class="valores-container">
+      <header>
+        <h2>Bem-vindo(a), <span id="nomeUsuario">[Nome do Usuário]</span></h2>
+        <p>Cliente: <span id="nomeCliente">[Nome do Cliente]</span></p>
+        <p>Grupo / Cota: <span id="grupoCota">[Grupo / Cota]</span></p>
+        <p>Ramo de Atuação: <span id="ramoCliente">[Ramo do Cliente]</span></p>
+      </header>
+
+      <nav class="abas">
+        <a href="/values/ativo.html" class="aba">Ativo Circulante</a>
+        <a href="/values/ativonao.html" class="aba">Ativo não Circulante</a>
+        <a href="/values/passivo.html" class="aba">Passivo Circulante</a>
+        <a href="/values/passivonao.html" class="aba">Passivo não Circulante</a>
+        <a href="/values/patrimonio.html" class="aba">Patrimonio Líquido</a>
+        <a href="/values/dre.html" class="aba">DRE</a>
+      </nav>
+
+      <div class="acoes">
+        <div class="btn-container">
+          <a href="indicators.html" class="btn-acessar">Ver indicadores</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Nome do usuário logado (login)
+    const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+    if (usuario && usuario.nome) {
+      document.getElementById('nomeUsuario').textContent = usuario.nome;
+    }
+
+    // Dados do cliente (registro)
+    const cliente = JSON.parse(localStorage.getItem('cliente'));
+    if (cliente) {
+      if (cliente.nomeCliente) {
+        document.getElementById('nomeCliente').textContent = cliente.nomeCliente;
+      }
+      if (cliente.grupoCota) {
+        document.getElementById('grupoCota').textContent = cliente.grupoCota;
+      }
+      if (cliente.ramo) {
+        document.getElementById('ramoCliente').textContent = cliente.ramo;
+      }
+    }
+  });
+</script>
+</body>
+</html>
