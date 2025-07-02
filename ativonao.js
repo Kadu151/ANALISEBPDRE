@@ -63,7 +63,7 @@
         btnConcluido.addEventListener('click', (e) => {
           e.preventDefault();
           salvarAtivoNaoCirculante();
-          window.location.href = "/front/values.html";
+          window.location.href = "values.html";
         });
       }
 
@@ -81,7 +81,7 @@
     btnConcluido.addEventListener('click', (e) => {
       e.preventDefault();
       salvarAtivoNaoCirculante();
-      window.location.href = "/front/values.html";
+      window.location.href = "values.html";
     });
   }
 
