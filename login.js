@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }));
 
       alert('Login bem-sucedido!');
-      window.location.href = '/front/registration.html';
+      window.location.href = 'registration.html';
     } else {
       alert('Usuário ou senha incorretos. Tente novamente.');
     }
