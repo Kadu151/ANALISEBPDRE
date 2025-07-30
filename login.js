@@ -2,10 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('loginForm');
 
   const usuarios = [
-    { username: 'admin', password: '36551618', nomeCompleto: 'Kadu' },
-    { username: 'cintia.kawakami@unifisa.com.br', password: 'uni001', nomeCompleto: 'Cintia Kawakami' },
-    { username: 'Gabriel.Neto', password: 'NBCRD12-neto', nomeCompleto: 'Gabriel Neto' },
-    { username: 'maisa.magordo@unifisa.com.br', password: 'uni00', nomeCompleto: 'Maisa Magordo' }
+    { username: 'admin', password: '00001', nomeCompleto: 'Visitante' }
   ];
 
   form.addEventListener('submit', (e) => {
