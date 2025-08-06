@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('loginForm');
 
   const usuarios = [
-    { username: 'admin', password: '00001', nomeCompleto: 'Visitante' }
+    { username: 'admin', password: '00001', nomeCompleto: 'Visitante' },
+    { username: 'Cintia K.', password: 'unicin', nomeCompleto: 'Cintia K.' }
+
   ];
 
   form.addEventListener('submit', (e) => {
@@ -39,3 +41,4 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     this.submit();
   }
 });
+
